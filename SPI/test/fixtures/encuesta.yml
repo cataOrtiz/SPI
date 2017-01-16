@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id_encuesta: 1
+  fecha_creacion_encuesta: 2016-12-06
+  hora_envio_encuesta: 2016-12-06 00:12:33
+  resuelto_encuesta: 1
+  version: 1
+  linea: one
+  motivo: one
+
+two:
+  id_encuesta: 1
+  fecha_creacion_encuesta: 2016-12-06
+  hora_envio_encuesta: 2016-12-06 00:12:33
+  resuelto_encuesta: 1
+  version: 1
+  linea: two
+  motivo: two

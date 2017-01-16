@@ -1,0 +1,2 @@
+class VistaController < ApplicationController
+end

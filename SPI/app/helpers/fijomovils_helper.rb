@@ -1,0 +1,2 @@
+module FijomovilsHelper
+end

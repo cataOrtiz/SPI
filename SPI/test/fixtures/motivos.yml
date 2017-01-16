@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id_motivo: 1
+  tipo_motivo: MyString
+
+two:
+  id_motivo: 1
+  tipo_motivo: MyString

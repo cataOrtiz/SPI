@@ -1,0 +1,47 @@
+<%= form_for(atributosacumulado) do |f| %>
+  <% if atributosacumulado.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(atributosacumulado.errors.count, "error") %> prohibited this atributosacumulado from being saved:</h2>
+
+      <ul>
+      <% atributosacumulado.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :id_atr_acum %>
+    <%= f.number_field :id_atr_acum %>
+  </div>
+
+  <div class="field">
+    <%= f.label :segmento %>
+    <%= f.number_field :segmento %>
+  </div>
+
+  <div class="field">
+    <%= f.label :pregunta %>
+    <%= f.number_field :pregunta %>
+  </div>
+
+  <div class="field">
+    <%= f.label :valor %>
+    <%= f.text_field :valor %>
+  </div>
+
+  <div class="field">
+    <%= f.label :version %>
+    <%= f.number_field :version %>
+  </div>
+
+  <div class="field">
+    <%= f.label :fecha %>
+    <%= f.date_select :fecha %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Indicadoresdiarios</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id ind diario</th>
+      <th>Segmento</th>
+      <th>Isn</th>
+      <th>Resp 1 2</th>
+      <th>Resp 4 5</th>
+      <th>Resolutividad</th>
+      <th>Version</th>
+      <th>Fecha</th>
+      <th>Volumen</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @indicadoresdiarios.each do |indicadoresdiario| %>
+      <tr>
+        <td><%= indicadoresdiario.id_ind_diario %></td>
+        <td><%= indicadoresdiario.segmento %></td>
+        <td><%= indicadoresdiario.isn %></td>
+        <td><%= indicadoresdiario.resp_1_2 %></td>
+        <td><%= indicadoresdiario.resp_4_5 %></td>
+        <td><%= indicadoresdiario.resolutividad %></td>
+        <td><%= indicadoresdiario.version %></td>
+        <td><%= indicadoresdiario.fecha %></td>
+        <td><%= indicadoresdiario.volumen %></td>
+        <td><%= link_to 'Show', indicadoresdiario %></td>
+        <td><%= link_to 'Edit', edit_indicadoresdiario_path(indicadoresdiario) %></td>
+        <td><%= link_to 'Destroy', indicadoresdiario, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Indicadoresdiario', new_indicadoresdiario_path %>

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Fijomovils</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id fijomovil</th>
+      <th>Tipo fijomovil</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fijomovils.each do |fijomovil| %>
+      <tr>
+        <td><%= fijomovil.id_fijomovil %></td>
+        <td><%= fijomovil.tipo_fijomovil %></td>
+        <td><%= link_to 'Show', fijomovil %></td>
+        <td><%= link_to 'Edit', edit_fijomovil_path(fijomovil) %></td>
+        <td><%= link_to 'Destroy', fijomovil, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Fijomovil', new_fijomovil_path %>

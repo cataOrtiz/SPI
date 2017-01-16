@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id_linea: 1
+  numero_cliente: MyString
+  cliente: one
+  segmento: one
+  fijomovil: one
+  contrato: one
+
+two:
+  id_linea: 1
+  numero_cliente: MyString
+  cliente: two
+  segmento: two
+  fijomovil: two
+  contrato: two

@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Atributosacumulados</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id atr acum</th>
+      <th>Segmento</th>
+      <th>Pregunta</th>
+      <th>Valor</th>
+      <th>Version</th>
+      <th>Fecha</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @atributosacumulados.each do |atributosacumulado| %>
+      <tr>
+        <td><%= atributosacumulado.id_atr_acum %></td>
+        <td><%= atributosacumulado.segmento %></td>
+        <td><%= atributosacumulado.pregunta %></td>
+        <td><%= atributosacumulado.valor %></td>
+        <td><%= atributosacumulado.version %></td>
+        <td><%= atributosacumulado.fecha %></td>
+        <td><%= link_to 'Show', atributosacumulado %></td>
+        <td><%= link_to 'Edit', edit_atributosacumulado_path(atributosacumulado) %></td>
+        <td><%= link_to 'Destroy', atributosacumulado, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Atributosacumulado', new_atributosacumulado_path %>

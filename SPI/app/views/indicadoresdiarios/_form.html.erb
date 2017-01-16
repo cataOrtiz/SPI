@@ -1,0 +1,62 @@
+<%= form_for(indicadoresdiario) do |f| %>
+  <% if indicadoresdiario.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(indicadoresdiario.errors.count, "error") %> prohibited this indicadoresdiario from being saved:</h2>
+
+      <ul>
+      <% indicadoresdiario.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :id_ind_diario %>
+    <%= f.number_field :id_ind_diario %>
+  </div>
+
+  <div class="field">
+    <%= f.label :segmento %>
+    <%= f.number_field :segmento %>
+  </div>
+
+  <div class="field">
+    <%= f.label :isn %>
+    <%= f.text_field :isn %>
+  </div>
+
+  <div class="field">
+    <%= f.label :resp_1_2 %>
+    <%= f.text_field :resp_1_2 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :resp_4_5 %>
+    <%= f.text_field :resp_4_5 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :resolutividad %>
+    <%= f.text_field :resolutividad %>
+  </div>
+
+  <div class="field">
+    <%= f.label :version %>
+    <%= f.number_field :version %>
+  </div>
+
+  <div class="field">
+    <%= f.label :fecha %>
+    <%= f.date_select :fecha %>
+  </div>
+
+  <div class="field">
+    <%= f.label :volumen %>
+    <%= f.number_field :volumen %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

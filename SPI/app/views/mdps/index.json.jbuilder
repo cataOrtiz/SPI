@@ -1,0 +1,1 @@
+json.array! @mdps, partial: 'mdps/mdp', as: :mdp

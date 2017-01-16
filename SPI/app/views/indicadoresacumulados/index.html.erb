@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Indicadoresacumulados</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id ind acumulado</th>
+      <th>Segmento</th>
+      <th>Isn</th>
+      <th>Resp 1 2</th>
+      <th>Resp 4 5</th>
+      <th>Resolutividad</th>
+      <th>Version</th>
+      <th>Fecha</th>
+      <th>Volumen</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @indicadoresacumulados.each do |indicadoresacumulado| %>
+      <tr>
+        <td><%= indicadoresacumulado.id_ind_acumulado %></td>
+        <td><%= indicadoresacumulado.segmento %></td>
+        <td><%= indicadoresacumulado.isn %></td>
+        <td><%= indicadoresacumulado.resp_1_2 %></td>
+        <td><%= indicadoresacumulado.resp_4_5 %></td>
+        <td><%= indicadoresacumulado.resolutividad %></td>
+        <td><%= indicadoresacumulado.version %></td>
+        <td><%= indicadoresacumulado.fecha %></td>
+        <td><%= indicadoresacumulado.volumen %></td>
+        <td><%= link_to 'Show', indicadoresacumulado %></td>
+        <td><%= link_to 'Edit', edit_indicadoresacumulado_path(indicadoresacumulado) %></td>
+        <td><%= link_to 'Destroy', indicadoresacumulado, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Indicadoresacumulado', new_indicadoresacumulado_path %>

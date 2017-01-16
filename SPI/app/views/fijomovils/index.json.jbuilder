@@ -1,0 +1,1 @@
+json.array! @fijomovils, partial: 'fijomovils/fijomovil', as: :fijomovil

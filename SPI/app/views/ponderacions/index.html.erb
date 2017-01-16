@@ -1,0 +1,49 @@
+<%= render 'partials/menu' %>
+<p id="notice"><%= notice %></p>
+
+<% @nombres_ponderaciones = ['Contrato','Hibrido','Prepago','Fijo','Pyme Fijo','Pyme Movil','Global Desktop','Global Mobile'] %>
+
+<div class="container-fluid container-fullw bg-white">
+    <div class="row">
+        <div class="col-sm-2">
+            
+        </div>
+        <div class="col-sm-8">
+            <div class="panel panel-white no-radius text-center">
+                <div class="panel-body">
+
+
+                <h1>Cambio de Ponderaciones</h1>
+
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Id ponderacion</th>
+                      <th>Valor</th>
+                      <th>Fecha</th>
+                      <th colspan="3"></th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    <% @ponderacions.each do |ponderacion| %>
+                      <tr>
+                        <td><%= @nombres_ponderaciones[ponderacion.id_ponderacion - 1]%></td>
+                        <td><%= (ponderacion.valor * 100).round(1) %> %</td>
+                        <td><%= ponderacion.fecha %></td>
+                        <td><%= link_to 'Detalle', ponderacion, :class =>"btn btn-default"  %></td>
+                        <td><%= link_to 'Editar', edit_ponderacion_path(ponderacion), :class =>"btn btn-default"  %></td>
+                      </tr>
+                    <% end %>
+                  </tbody>
+                </table>
+
+                <br>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-2">
+        </div>
+    </div>
+</div>

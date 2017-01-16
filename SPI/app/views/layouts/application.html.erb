@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SPI1.0</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'jquery.min', 'perfect-scrollbar.min', 'bootstrap.min', 'data-turbolinks-track': 'reload' %>
+        <!-- start: META -->
+    <!--[if IE]><meta http-equiv='X-UA-Compatible' content="IE=edge,IE=9,IE=8,chrome=1" /><![endif]-->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <!-- end: META -->
+    <!-- start: GOOGLE FONTS -->
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
+    <!-- end: GOOGLE FONTS -->
+    <!-- start: MAIN CSS -->
+    <link rel="stylesheet" href="assets/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/stylesheets/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/stylesheets/themify-icons.min.css">
+    <link href="assets/stylesheets/animate.css/animate.min.css" rel="stylesheet" media="screen">
+    <link href="assets/stylesheets/perfect-scrollbar.min.css" rel="stylesheet" media="screen">
+    <link href="assets/stylesheets/switchery.min.css" rel="stylesheet" media="screen">
+    <!-- end: MAIN CSS -->
+    <!-- start: CLIP-TWO CSS -->
+    <link rel="stylesheet" href="/assets/stylesheets/styles.css">
+    <link rel="stylesheet" href="/assets/stylesheets/plugins.css">
+    <link rel="stylesheet" href="/assets/stylesheets/theme-1.css" id="skin_color" />
+    <!-- end: CLIP-TWO CSS -->
+    <!-- start: CSS REQUIRED FOR THIS PAGE ONLY -->
+    <!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
+  </head>
+
+  <body>
+
+ 
+    <%= yield %>
+
+
+
+
+
+        <!-- start: MAIN JAVASCRIPTS -->
+    <script src="/assets/javascripts/jquery.min.js"></script>
+    <script src="/assets/javascripts/bootstrap.min.js"></script>
+
+  <!-- <script src="http:////cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
+
+    <script src="/assets/javascripts/modernizr.js"></script>
+    <script src="/assets/javascripts/jquery.cookie.js"></script>
+    <script src="/assets/javascripts/perfect-scrollbar.min.js"></script>
+    <script src="/assets/javascripts/switchery.min.js"></script>
+    <!-- end: MAIN JAVASCRIPTS -->
+    <!-- start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
+    <script src="vendor/Chart.js/Chart.min.js"></script>
+    <script src="vendor/jquery.sparkline/jquery.sparkline.min.js"></script>
+    <!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
+    <!-- start: CLIP-TWO JAVASCRIPTS -->
+    <script src="/assets/javascripts/main.js"></script>
+    <!-- start: JavaScript Event Handlers for this page -->
+    <script src="/assets/javascripts/index.js"></script>
+    <script>
+      jQuery(document).ready(function() {
+        Main.init();
+        Index.init();
+      });
+    </script>
+    <!-- end: JavaScript Event Handlers for this page -->
+    <!-- end: CLIP-TWO JAVASCRIPTS -->
+
+  </body>
+</html>

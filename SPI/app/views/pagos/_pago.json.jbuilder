@@ -1,0 +1,2 @@
+json.extract! pago, :id, :id_pago, :canal, :orden_compra, :fecha_transaccion, :hora, :cod_retorno, :cod_autorizacion, :monto, :fecha_pago, :fecha_ident_transaccion, :tel_movil, :tel_fijo, :cod_cliente, :documento, :linea_id, :created_at, :updated_at
+json.url pago_url(pago, format: :json)

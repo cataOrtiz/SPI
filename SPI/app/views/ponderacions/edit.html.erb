@@ -1,0 +1,24 @@
+<%= render 'partials/menu' %>
+<h1>Editando Ponderacion</h1>
+
+<div class="bg">
+	<div class="row">
+		<div class="col-sm-2">
+
+		</div>
+		<div class="col-sm-8">
+			<div class="panel text-center">
+
+
+				<%= render 'form', ponderacion: @ponderacion %>
+
+				<%= link_to 'Mostrar', @ponderacion, :class =>"btn btn-default" %> |
+				<%= link_to 'Volver', ponderacions_path, :class =>"btn btn-default"  %>
+
+			</div>
+		</div>
+		<div class="col-sm-2">
+		</div>
+	</div>
+</div>
+

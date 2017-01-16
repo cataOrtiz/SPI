@@ -1,0 +1,2 @@
+class Mdp < ApplicationRecord
+end

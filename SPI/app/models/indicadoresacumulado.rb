@@ -1,0 +1,2 @@
+class Indicadoresacumulado < ApplicationRecord
+end

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Pregunta</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id pregunta</th>
+      <th>Tipo pregunta</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pregunta.each do |preguntum| %>
+      <tr>
+        <td><%= preguntum.id_pregunta %></td>
+        <td><%= preguntum.tipo_pregunta %></td>
+        <td><%= link_to 'Show', preguntum %></td>
+        <td><%= link_to 'Edit', edit_preguntum_path(preguntum) %></td>
+        <td><%= link_to 'Destroy', preguntum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Preguntum', new_preguntum_path %>

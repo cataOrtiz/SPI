@@ -1,0 +1,246 @@
+<%= render 'partials/menu' %>
+
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="http://code.highcharts.com/modules/exporting.js"></script>
+
+
+<div class="container-fluid container-fullw bg-white">
+<button id="btn_diario_desktop" class ="btn btn-default">Ver diario desktop</button>
+<button id="btn_diario_mobile" class ="btn btn-default">Ver diario mobile</button>
+<button id="btn_diario_COL" class ="btn btn-default">Ver diario COL</button>
+<button id="btn_acumulado_desktop" class ="btn btn-default">Ver acumulado desktop</button>
+<button id="btn_acumulado_mobile" class ="btn btn-default">Ver acumulado mobile</button>
+<button id="btn_acumulado_COL" class ="btn btn-default">Ver acumulado COL</button>
+
+
+  <div class="row">
+    <div class="col-sm-12">
+        <div class="panel panel-white no-radius text-center">
+              <div class="panel-body">
+          <div id="grafico" class="chart"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+ 
+
+<script type="text/javascript">
+    $(function() {
+
+    	 Highcharts.setOptions({
+              lang:{
+                  months: ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'],
+                  shortMonths: ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'],
+                  weekdays: ['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'],
+                  shortWeekdays: ['Dom','Lun','Mar','Mie','Jue','Vie','Sáb'],
+                  printChart: 'Imprimir gráfico',
+                  downloadPNG: 'Descargar PNG',
+                  downloadPDF: 'Descargar PDF',
+                  downloadJPEG:'Descargar JPEG',
+                  downloadSVG: 'Descargar SVG'
+                }
+            });
+        // Create the first chart
+        $('#grafico').highcharts({
+
+            chart: {
+                type: 'spline' // Chart type (i.e. 'bar', 'column', 'spline' etc)
+            },
+            title: {
+                text: 'Atributos Canal Online' // Title for the chart
+            },
+            xAxis: [{
+                type: 'datetime',
+                dateTimeLabelFormats: { // don't display the dummy year
+                    month: '%e. %b',
+                    year: '%b'
+                },
+                title: {
+                    text: 'Fecha'
+                },
+            }],
+            yAxis: [{ // Primary yAxis
+                endOnTick:false ,
+                alignTicks:false,
+
+                // plotBands: [{
+                //         from: 60,
+                //         to: 100,
+                //         color: 'rgba(0, 250, 0, 0.1)'
+                //     },
+                //     {
+                //         from: 60,
+                //         to:-100,
+                //         color: 'rgba(250, 0, 0, 0.1)'
+                //     }
+
+                //     ],
+
+                plotLines: [{
+                        value: 60,
+                        color: 'green',
+                        label: {
+                            text: 'Valor mínimo',
+                            align: 'right'
+                        },
+                        dashStyle: 'shortdash',
+                        width: 1.5,
+                    }],
+                labels: {
+                    format: '{value}',
+                    style: {
+                        color: Highcharts.getOptions().colors[1]
+                    }
+                },
+                title: {
+                    text: 'Valor en %',
+                    style: {
+                        color: Highcharts.getOptions().colors[1]
+                    }
+                }
+            // }, { // Secondary yAxis
+            //     title: {
+            //         text: 'Respuestas',
+            //         style: {
+            //             color: Highcharts.getOptions().colors[0]
+            //         }
+            //     },
+            //     labels: {
+            //         format: '{value} %',
+            //         style: {
+            //             color: Highcharts.getOptions().colors[0]
+            //         }
+            //     },
+            //     opposite: true
+            }],
+            legend: {
+                enabled: true // Enable/Disable the legend
+            },
+            credits: {
+                enabled: true, // Enable/Disable the credits
+                text: 'This is a credit'
+            },
+            tooltip: {
+                shared: true // If you have multiple series then all points in each category will show up on one tooltip
+            },
+            series: [{
+                name: 'Fácil Ingreso',
+                type: 'spline',
+                //yAxis: 1,
+                color: '#FFC000',
+                verticalAlign:'top',
+                data: <%=@datos_acumulado_COL%>[0],
+                dataLabels: {
+                        enabled: true,
+                        borderColor: 'black',
+                        color: '#FFC000'//|| 'black'
+
+                        //colorByPoint: true
+                    }           
+                
+            },
+            {
+                name: 'Velocidad de carga',
+                type: 'spline',
+                //yAxis: 1,
+                color: '#073046',
+                data: <%=@datos_acumulado_COL%>[1],
+                dataLabels: {
+                        enabled: true,
+                        borderColor: 'black',
+                        color: '#073046'//|| 'black'
+
+                        //colorByPoint: true
+                    }           
+               
+            },
+            {
+                name: 'Fácil encontrar info',
+                type: 'spline',
+                color: '#0095A7',
+                data: <%=@datos_acumulado_COL%>[2],
+                dataLabels: {
+                        enabled: true,
+                        borderColor: 'black',
+                        color: '#0095A7'//|| 'black'
+
+                        //colorByPoint: true
+                    }
+               
+            },
+            {
+                name: 'Utilidad Info',
+                type: 'spline',
+                color: '#92D050',
+                data: <%=@datos_acumulado_COL%>[3],
+                dataLabels: {
+                        enabled: true,
+                        borderColor: 'black',
+                        color: '#92D050'//|| 'black'
+
+                        //colorByPoint: true
+                    }
+               
+            }]
+        }, 
+        function(chart){
+            //chart.series[0].hideDataLabels = false;
+            //chart.series.data[0] = <%=@datos_grafico%>[3];
+            // Add toggler action
+            $('#btn_diario_desktop').click(function() {
+                chart.series[0].setData(<%=@datos_diario_desktop%>[0],false);
+                chart.series[1].setData(<%=@datos_diario_desktop%>[1],false);
+                chart.series[2].setData(<%=@datos_diario_desktop%>[2],false);
+                chart.series[3].setData(<%=@datos_diario_desktop%>[3],false);
+                $('#grafico').highcharts().redraw();
+            });
+
+            $('#btn_diario_mobile').click(function() {
+                chart.series[0].setData(<%=@datos_diario_mobile%>[0],false);
+                chart.series[1].setData(<%=@datos_diario_mobile%>[1],false);
+                chart.series[2].setData(<%=@datos_diario_mobile%>[2],false);
+                chart.series[3].setData(<%=@datos_diario_mobile%>[3],false);
+                $('#grafico').highcharts().redraw();
+            });
+
+            $('#btn_diario_COL').click(function() {
+                chart.series[0].setData(<%=@datos_diario_COL%>[0],false);
+                chart.series[1].setData(<%=@datos_diario_COL%>[1],false);
+                chart.series[2].setData(<%=@datos_diario_COL%>[2],false);
+                chart.series[3].setData(<%=@datos_diario_COL%>[3],false);
+                $('#grafico').highcharts().redraw();
+            });
+
+            $('#btn_acumulado_desktop').click(function() {
+                chart.series[0].setData(<%=@datos_acumulado_desktop%>[0],false);
+                chart.series[1].setData(<%=@datos_acumulado_desktop%>[1],false);
+                chart.series[2].setData(<%=@datos_acumulado_desktop%>[2],false);
+                chart.series[3].setData(<%=@datos_acumulado_desktop%>[3],false);
+                $('#grafico').highcharts().redraw();
+            });
+
+            $('#btn_acumulado_mobile').click(function() {
+                chart.series[0].setData(<%=@datos_acumulado_mobile%>[0],false);
+                chart.series[1].setData(<%=@datos_acumulado_mobile%>[1],false);
+                chart.series[2].setData(<%=@datos_acumulado_mobile%>[2],false);
+                chart.series[3].setData(<%=@datos_acumulado_mobile%>[3],false);
+                $('#grafico').highcharts().redraw();
+            });
+
+            $('#btn_acumulado_COL').click(function() {
+                chart.series[0].setData(<%=@datos_acumulado_COL%>[0],false);
+                chart.series[1].setData(<%=@datos_acumulado_COL%>[1],false);
+                chart.series[2].setData(<%=@datos_acumulado_COL%>[2],false);
+                chart.series[3].setData(<%=@datos_acumulado_COL%>[3],false);
+                $('#grafico').highcharts().redraw();
+            });
+    });
+});
+
+</script>

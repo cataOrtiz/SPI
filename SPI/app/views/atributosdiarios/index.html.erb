@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Atributosdiarios</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id atr diario</th>
+      <th>Segmento</th>
+      <th>Pregunta</th>
+      <th>Valor</th>
+      <th>Version</th>
+      <th>Fecha</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @atributosdiarios.each do |atributosdiario| %>
+      <tr>
+        <td><%= atributosdiario.id_atr_diario %></td>
+        <td><%= atributosdiario.segmento %></td>
+        <td><%= atributosdiario.pregunta %></td>
+        <td><%= atributosdiario.valor %></td>
+        <td><%= atributosdiario.version %></td>
+        <td><%= atributosdiario.fecha %></td>
+        <td><%= link_to 'Show', atributosdiario %></td>
+        <td><%= link_to 'Edit', edit_atributosdiario_path(atributosdiario) %></td>
+        <td><%= link_to 'Destroy', atributosdiario, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Atributosdiario', new_atributosdiario_path %>

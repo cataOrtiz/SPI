@@ -1,0 +1,1 @@
+json.array! @atributosdiarios, partial: 'atributosdiarios/atributosdiario', as: :atributosdiario

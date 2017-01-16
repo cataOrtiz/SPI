@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id_ind_acumulado: 1
+  segmento: 1
+  isn: 1.5
+  resp_1_2: 1.5
+  resp_4_5: 1.5
+  resolutividad: 1.5
+  version: 1
+  fecha: 2017-01-16
+  volumen: 1
+
+two:
+  id_ind_acumulado: 1
+  segmento: 1
+  isn: 1.5
+  resp_1_2: 1.5
+  resp_4_5: 1.5
+  resolutividad: 1.5
+  version: 1
+  fecha: 2017-01-16
+  volumen: 1

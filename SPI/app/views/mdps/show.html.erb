@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Id mdp:</strong>
+  <%= @mdp.id_mdp %>
+</p>
+
+<p>
+  <strong>Nombre mdp:</strong>
+  <%= @mdp.nombre_mdp %>
+</p>
+
+<%= link_to 'Edit', edit_mdp_path(@mdp) %> |
+<%= link_to 'Back', mdps_path %>

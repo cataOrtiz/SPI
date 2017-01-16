@@ -1,0 +1,1 @@
+json.array! @atributosacumulados, partial: 'atributosacumulados/atributosacumulado', as: :atributosacumulado

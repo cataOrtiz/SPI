@@ -1,0 +1,27 @@
+<%= form_for(mdp) do |f| %>
+  <% if mdp.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(mdp.errors.count, "error") %> prohibited this mdp from being saved:</h2>
+
+      <ul>
+      <% mdp.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :id_mdp %>
+    <%= f.number_field :id_mdp %>
+  </div>
+
+  <div class="field">
+    <%= f.label :nombre_mdp %>
+    <%= f.text_field :nombre_mdp %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

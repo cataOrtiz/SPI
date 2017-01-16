@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Mdps</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id mdp</th>
+      <th>Nombre mdp</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mdps.each do |mdp| %>
+      <tr>
+        <td><%= mdp.id_mdp %></td>
+        <td><%= mdp.nombre_mdp %></td>
+        <td><%= link_to 'Show', mdp %></td>
+        <td><%= link_to 'Edit', edit_mdp_path(mdp) %></td>
+        <td><%= link_to 'Destroy', mdp, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Mdp', new_mdp_path %>

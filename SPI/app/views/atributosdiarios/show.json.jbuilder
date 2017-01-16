@@ -1,0 +1,1 @@
+json.partial! "atributosdiarios/atributosdiario", atributosdiario: @atributosdiario

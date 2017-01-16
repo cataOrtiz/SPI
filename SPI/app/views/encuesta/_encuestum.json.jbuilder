@@ -1,0 +1,2 @@
+json.extract! encuestum, :id, :id_encuesta, :fecha_creacion_encuesta, :hora_envio_encuesta, :resuelto_encuesta, :version, :linea_id, :motivo_id, :created_at, :updated_at
+json.url encuestum_url(encuestum, format: :json)

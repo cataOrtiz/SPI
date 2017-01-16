@@ -1,0 +1,47 @@
+<%= form_for(linea) do |f| %>
+  <% if linea.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(linea.errors.count, "error") %> prohibited this linea from being saved:</h2>
+
+      <ul>
+      <% linea.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :id_linea %>
+    <%= f.number_field :id_linea %>
+  </div>
+
+  <div class="field">
+    <%= f.label :numero_cliente %>
+    <%= f.text_field :numero_cliente %>
+  </div>
+
+  <div class="field">
+    <%= f.label :cliente_id %>
+    <%= f.text_field :cliente_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :segmento_id %>
+    <%= f.text_field :segmento_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :fijomovil_id %>
+    <%= f.text_field :fijomovil_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :contrato_id %>
+    <%= f.text_field :contrato_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

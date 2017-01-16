@@ -1,0 +1,92 @@
+<%= form_for(pago) do |f| %>
+  <% if pago.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(pago.errors.count, "error") %> prohibited this pago from being saved:</h2>
+
+      <ul>
+      <% pago.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :id_pago %>
+    <%= f.number_field :id_pago %>
+  </div>
+
+  <div class="field">
+    <%= f.label :canal %>
+    <%= f.text_area :canal %>
+  </div>
+
+  <div class="field">
+    <%= f.label :orden_compra %>
+    <%= f.text_area :orden_compra %>
+  </div>
+
+  <div class="field">
+    <%= f.label :fecha_transaccion %>
+    <%= f.date_select :fecha_transaccion %>
+  </div>
+
+  <div class="field">
+    <%= f.label :hora %>
+    <%= f.time_select :hora %>
+  </div>
+
+  <div class="field">
+    <%= f.label :cod_retorno %>
+    <%= f.number_field :cod_retorno %>
+  </div>
+
+  <div class="field">
+    <%= f.label :cod_autorizacion %>
+    <%= f.number_field :cod_autorizacion %>
+  </div>
+
+  <div class="field">
+    <%= f.label :monto %>
+    <%= f.number_field :monto %>
+  </div>
+
+  <div class="field">
+    <%= f.label :fecha_pago %>
+    <%= f.date_select :fecha_pago %>
+  </div>
+
+  <div class="field">
+    <%= f.label :fecha_ident_transaccion %>
+    <%= f.date_select :fecha_ident_transaccion %>
+  </div>
+
+  <div class="field">
+    <%= f.label :tel_movil %>
+    <%= f.number_field :tel_movil %>
+  </div>
+
+  <div class="field">
+    <%= f.label :tel_fijo %>
+    <%= f.number_field :tel_fijo %>
+  </div>
+
+  <div class="field">
+    <%= f.label :cod_cliente %>
+    <%= f.number_field :cod_cliente %>
+  </div>
+
+  <div class="field">
+    <%= f.label :documento %>
+    <%= f.number_field :documento %>
+  </div>
+
+  <div class="field">
+    <%= f.label :linea_id %>
+    <%= f.text_field :linea_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

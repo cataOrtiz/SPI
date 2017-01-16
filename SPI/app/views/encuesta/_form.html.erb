@@ -1,0 +1,52 @@
+<%= form_for(encuestum) do |f| %>
+  <% if encuestum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(encuestum.errors.count, "error") %> prohibited this encuestum from being saved:</h2>
+
+      <ul>
+      <% encuestum.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :id_encuesta %>
+    <%= f.number_field :id_encuesta %>
+  </div>
+
+  <div class="field">
+    <%= f.label :fecha_creacion_encuesta %>
+    <%= f.date_select :fecha_creacion_encuesta %>
+  </div>
+
+  <div class="field">
+    <%= f.label :hora_envio_encuesta %>
+    <%= f.time_select :hora_envio_encuesta %>
+  </div>
+
+  <div class="field">
+    <%= f.label :resuelto_encuesta %>
+    <%= f.number_field :resuelto_encuesta %>
+  </div>
+
+  <div class="field">
+    <%= f.label :version %>
+    <%= f.number_field :version %>
+  </div>
+
+  <div class="field">
+    <%= f.label :linea_id %>
+    <%= f.text_field :linea_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :motivo_id %>
+    <%= f.text_field :motivo_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

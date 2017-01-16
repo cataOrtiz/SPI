@@ -1,0 +1,2 @@
+json.extract! indicadoresacumulado, :id, :id_ind_acumulado, :segmento, :isn, :resp_1_2, :resp_4_5, :resolutividad, :version, :fecha, :volumen, :created_at, :updated_at
+json.url indicadoresacumulado_url(indicadoresacumulado, format: :json)

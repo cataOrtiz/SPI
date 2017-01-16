@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id_pago: 1
+  canal: MyText
+  orden_compra: MyText
+  fecha_transaccion: 2016-12-06
+  hora: 2016-12-06 00:12:30
+  cod_retorno: 1
+  cod_autorizacion: 1
+  monto: 1
+  fecha_pago: 2016-12-06
+  fecha_ident_transaccion: 2016-12-06
+  tel_movil: 1
+  tel_fijo: 1
+  cod_cliente: 1
+  documento: 1
+  linea: one
+
+two:
+  id_pago: 1
+  canal: MyText
+  orden_compra: MyText
+  fecha_transaccion: 2016-12-06
+  hora: 2016-12-06 00:12:30
+  cod_retorno: 1
+  cod_autorizacion: 1
+  monto: 1
+  fecha_pago: 2016-12-06
+  fecha_ident_transaccion: 2016-12-06
+  tel_movil: 1
+  tel_fijo: 1
+  cod_cliente: 1
+  documento: 1
+  linea: two

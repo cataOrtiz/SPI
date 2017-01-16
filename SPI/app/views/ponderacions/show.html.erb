@@ -1,0 +1,40 @@
+<%= render 'partials/menu' %>
+
+<div class="container-fluid container-fullw bg-white">
+    <div class="row">
+        <div class="col-sm-2">
+            
+        </div>
+        <div class="col-sm-8">
+            <div class="panel panel-white no-radius text-center">
+                <div class="">
+
+					<% @nombres_ponderaciones = ['Contrato','Hibrido','Prepago','Fijo','Pyme Fijo','Pyme Movil','Global Desktop','Global Mobile'] %>
+
+					<div class="panel panel-white" id="panel1">
+						<div class="panel-heading">
+						<h2 class="panel-title text-primary">Ponderación de <%= @nombres_ponderaciones[@ponderacion.id_ponderacion-1] %></h2>
+							<div class="panel-tools" >
+								<a data-original-title="Collapse" data-toggle="tooltip" data-placement="top" class="btn btn-transparent btn-sm panel-collapse" href="#"><i class="ti-minus collapse-off"></i><i class="ti-plus collapse-on"></i></a>
+							</div>
+						</div>
+						<div class="panel-body">
+							<p>
+								<h3>La ponderación del segmento <%= @nombres_ponderaciones[@ponderacion.id_ponderacion-1] %> es de <%= @ponderacion.valor * 100%> % con fecha <%= @ponderacion.fecha %></h3>
+							</p>
+
+							<%= link_to 'Editar', edit_ponderacion_path(@ponderacion), :class =>"btn btn-default"  %> |
+							<%= link_to 'Volver', ponderacions_path, :class =>"btn btn-default"  %>
+						</div>
+
+					</div>
+
+
+
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-2">
+        </div>
+    </div>
+</div>

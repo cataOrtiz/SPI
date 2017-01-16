@@ -1,0 +1,1 @@
+json.partial! "fijomovils/fijomovil", fijomovil: @fijomovil

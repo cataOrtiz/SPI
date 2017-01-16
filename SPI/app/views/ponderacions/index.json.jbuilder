@@ -1,0 +1,1 @@
+json.array! @ponderacions, partial: 'ponderacions/ponderacion', as: :ponderacion

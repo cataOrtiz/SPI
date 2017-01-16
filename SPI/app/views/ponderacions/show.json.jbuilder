@@ -1,0 +1,1 @@
+json.partial! "ponderacions/ponderacion", ponderacion: @ponderacion

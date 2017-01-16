@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Pagos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id pago</th>
+      <th>Canal</th>
+      <th>Orden compra</th>
+      <th>Fecha transaccion</th>
+      <th>Hora</th>
+      <th>Cod retorno</th>
+      <th>Cod autorizacion</th>
+      <th>Monto</th>
+      <th>Fecha pago</th>
+      <th>Fecha ident transaccion</th>
+      <th>Tel movil</th>
+      <th>Tel fijo</th>
+      <th>Cod cliente</th>
+      <th>Documento</th>
+      <th>Linea</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pagos.each do |pago| %>
+      <tr>
+        <td><%= pago.id_pago %></td>
+        <td><%= pago.canal %></td>
+        <td><%= pago.orden_compra %></td>
+        <td><%= pago.fecha_transaccion %></td>
+        <td><%= pago.hora %></td>
+        <td><%= pago.cod_retorno %></td>
+        <td><%= pago.cod_autorizacion %></td>
+        <td><%= pago.monto %></td>
+        <td><%= pago.fecha_pago %></td>
+        <td><%= pago.fecha_ident_transaccion %></td>
+        <td><%= pago.tel_movil %></td>
+        <td><%= pago.tel_fijo %></td>
+        <td><%= pago.cod_cliente %></td>
+        <td><%= pago.documento %></td>
+        <td><%= pago.linea %></td>
+        <td><%= link_to 'Show', pago %></td>
+        <td><%= link_to 'Edit', edit_pago_path(pago) %></td>
+        <td><%= link_to 'Destroy', pago, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pago', new_pago_path %>

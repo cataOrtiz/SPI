@@ -1,0 +1,2 @@
+class Indicadoresdiario < ApplicationRecord
+end

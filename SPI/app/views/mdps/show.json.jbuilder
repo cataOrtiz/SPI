@@ -1,0 +1,1 @@
+json.partial! "mdps/mdp", mdp: @mdp

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  valor_pregunta: 1
+  preguntum: one
+  encuestum: one
+
+two:
+  valor_pregunta: 1
+  preguntum: two
+  encuestum: two

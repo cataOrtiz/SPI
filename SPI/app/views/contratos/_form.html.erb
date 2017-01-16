@@ -1,0 +1,27 @@
+<%= form_for(contrato) do |f| %>
+  <% if contrato.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(contrato.errors.count, "error") %> prohibited this contrato from being saved:</h2>
+
+      <ul>
+      <% contrato.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :id_contrato %>
+    <%= f.number_field :id_contrato %>
+  </div>
+
+  <div class="field">
+    <%= f.label :tipo_contrato %>
+    <%= f.text_field :tipo_contrato %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

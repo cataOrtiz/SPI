@@ -1,0 +1,27 @@
+<%= form_for(preguntum) do |f| %>
+  <% if preguntum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(preguntum.errors.count, "error") %> prohibited this preguntum from being saved:</h2>
+
+      <ul>
+      <% preguntum.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :id_pregunta %>
+    <%= f.number_field :id_pregunta %>
+  </div>
+
+  <div class="field">
+    <%= f.label :tipo_pregunta %>
+    <%= f.text_field :tipo_pregunta %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

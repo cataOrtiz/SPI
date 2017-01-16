@@ -1,0 +1,27 @@
+<%= form_for(fijomovil) do |f| %>
+  <% if fijomovil.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(fijomovil.errors.count, "error") %> prohibited this fijomovil from being saved:</h2>
+
+      <ul>
+      <% fijomovil.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :id_fijomovil %>
+    <%= f.number_field :id_fijomovil %>
+  </div>
+
+  <div class="field">
+    <%= f.label :tipo_fijomovil %>
+    <%= f.text_field :tipo_fijomovil %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
